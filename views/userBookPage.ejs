@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('_nav') %>
+    <!-- <h1>hello world</h1> -->
+
+    <div class="container d-flex justify-content-center align-items-center">
+        <div class="card">
+            <img  src="<%= dataTravelCategoryById.imgUrl %>" class="card-img-top" alt="..." style="width: 500px; height: 400px; object-fit: cover;">
+            <div class="card-body">
+              <h5 class="card-title"><%= dataTravelCategoryById.nameTravel %></h5>
+              <h6 class="card-title">Schedule : <%= dataTravelCategoryById.formatDate(dataTravelCategoryById.schedule).resShow %></h6>
+              <h6 class="card-title">Category : <%= dataTravelCategoryById.Category.nameCategory %></h6>
+              <h6 class="card-title">Price : <%= dataTravelCategoryById.Category.newPrice %></h6>
+              <p class="card-text"><%= dataTravelCategoryById.Category.description %></p>
+              <p class="card-title">Capacity Available : <%= dataTravelCategoryById.capacity %></p>
+
+              <form method= "post" action="">
+                  <div class="row">
+                    <div class="col">
+                        <div class="mb-3">
+                            <input type="number" class="form-control" placeholder="Qty Order" name="quantityOrder">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-success">Buy</button>
+                    </div>
+                    <% if (error) { %>
+                        <p style="color: red;"><%= error %></p>
+                    <% } %>
+                  </div>
+              </form>
+              
+              
+            </div>
+            
+            <div class="card-footer">
+                <small class="text-body-secondary">Last updated : <%= dataTravelCategoryById.formatDate(dataTravelCategoryById.updatedAt).resShow %></small>
+            </div>
+            
+        </div>
+    </div>
+
+
+    <%- include('_bootstrap') %>
+</body>
+</html>

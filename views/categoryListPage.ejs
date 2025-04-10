@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <%- include('_nav') %>
+
+    <div class="container">
+        <h1>List of Travel Schedules</h1>
+
+        <a href="/categories/add" class="btn btn-secondary" style="margin-bottom: 10px;">Add Category</a>
+
+        <% if (deleted) { %>
+         <p style="color: red;">Data <%= deleted %> has been Deleted</p>
+        <% } %>
+
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Id Category</th>
+                <th scope="col">Category Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Description</th>
+                <th scope="col">Last Updated</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+                <% dataCategory.forEach((el,idx) => { %>
+                    <tr>
+                      <th scope="row"><%= el.id %></th>
+                      <td><%= el.nameCategory %></td>
+                      <td><%= el.newPrice %></td>
+                      <td><%= el.description %></td>
+                      <td><%= el.formatDate(el.updatedAt).resShow %></td>
+                      <td>
+                        <a href="/categories/list/<%= el.id %>/edit" class="btn btn-primary">Edit</a>
+                        <a href="/categories/list/<%= el.id %>/delete" class="btn btn-danger">Delete</a>
+                      </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+    
+    <%- include('_bootstrap') %>
+</body>
+</html>

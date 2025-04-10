@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('_nav') %>
+
+
+    <div class="container">
+        <% if (error) { %>
+            <% if (error.name === 'errorLogin') { %>
+                <p style="color: red;"><%= error.msg %></p>
+            <% } %>
+        <% } %>
+        <form method="post" action="/login">
+            <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-control" name="email">
+                <% if (error) { %>
+                    <% if (error.name === 'errorEmail') { %>
+                        <p style="color: red;"><%= error.msg %></p>
+                    <% } %>
+                <% } %>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Password</label>
+                <input type="password" class="form-control" name="password">
+                <% if (error) { %>
+                    <% if (error.name === 'errorPassword') { %>
+                        <p style="color: red;"><%= error.msg %></p>
+                    <% } %>
+                <% } %>
+            </div>
+            <button class="btn btn-primary">Login</button>
+        </form>
+    </div>
+
+    <%- include('_bootstrap') %>
+</body>
+</html>

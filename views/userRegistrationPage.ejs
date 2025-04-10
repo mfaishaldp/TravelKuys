@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <%- include('_nav') %>
+
+    <div class="container">
+        <form method="post" action="/registration">
+            <div>
+                <div class="mb-3">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-control" name="email">
+                    <% if (error) { %>
+                        <% error.forEach(el => { %>
+                            <% if (el.includes('Email') ) { %>
+                                <p style="color: red;"><%= el %></p>
+                            <% } %>
+                        <% }) %>
+                    <% } %>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Password</label>
+                    <input type="text" class="form-control" name="password">
+                    <% if (error) { %>
+                        <% error.forEach(el => { %>
+                            <% if (el.includes('Password') ) { %>
+                                <p style="color: red;"><%= el %></p>
+                            <% } %>
+                        <% }) %>
+                    <% } %>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Role</label>
+                    <select class="form-select" aria-label="Default select example" name="role">
+                        <% role = ['user','admin'] %>
+                        <% role.forEach(el => { %>
+                            <option value="<%= el %>"><%= el %></option>
+                        <% }) %>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Full Name</label>
+                    <input type="text" class="form-control" name="name">
+                    <% if (error) { %>
+                        <% error.forEach(el => { %>
+                            <% if (el.includes('Full Name') ) { %>
+                                <p style="color: red;"><%= el %></p>
+                            <% } %>
+                        <% }) %>
+                    <% } %>
+                </div>
+                
+                <div class="mb-3">
+                    <label class="form-label">Birth Date</label>
+                    <input type="date" class="form-control" name="birthDate">
+                    <% if (error) { %>
+                        <% error.forEach(el => { %>
+                            <% if (el.includes('Birth Date') ) { %>
+                                <p style="color: red;"><%= el %></p>
+                            <% } %>
+                        <% }) %>
+                    <% } %>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Identity Number</label>
+                    <input type="text" class="form-control" name="identityNumber">
+                    <% if (error) { %>
+                        <% error.forEach(el => { %>
+                            <% if (el.includes('Identity Number') ) { %>
+                                <p style="color: red;"><%= el %></p>
+                            <% } %>
+                        <% }) %>
+                    <% } %>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Phone Number</label>
+                    <input type="text" class="form-control" name="phoneNumber">
+                    <% if (error) { %>
+                        <% error.forEach(el => { %>
+                            <% if (el.includes('Phone Number') ) { %>
+                                <p style="color: red;"><%= el %></p>
+                            <% } %>
+                        <% }) %>
+                    <% } %>
+                </div>
+                
+                <button class="btn btn-primary">Sign Up</button>
+            </div>
+        </form>
+    </div>
+
+
+    <%- include('_bootstrap') %>
+</body>
+</html>

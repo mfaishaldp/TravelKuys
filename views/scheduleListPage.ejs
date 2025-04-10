@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <%- include('_nav') %>
+
+    <div class="container">
+        <h1>List of Travel Schedules</h1>
+        <% if (error) { %>
+            <p style="color: red;"><%= error %></p>
+        <% } %>
+        <a href="/categories/list" class="btn btn-secondary">Category List</a>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">No</th>
+                <th scope="col">Category</th>
+                <th scope="col">Travel Name</th>
+                <th scope="col">Schedule</th>
+                <th scope="col">Price</th>
+                <th scope="col">Capacity</th>
+                <th scope="col">Status</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+                <% dataTravelCategory.forEach((el,idx) => { %>
+                    <tr>
+                      <th scope="row"><%= idx+1 %></th>
+                      <td><%= el.Category.nameCategory %></td>
+                      <td><%= el.nameTravel %></td>
+                      <td><%= el.formatDate(el.schedule).resShow %></td>
+                      <td><%= el.Category.newPrice %></td>
+                      <td><%= el.capacity %></td>
+                      <td>
+                        <% if (el.travelStatus === 'Active') { %>
+                            <a href="" class="btn btn-success"><%= el.travelStatus %></a>
+                        <% } else { %>
+                            <a href="" class="btn btn-secondary"><%= el.travelStatus %></a>
+                        <% } %>
+                      </td>
+                      <td>
+                        <a href="/schedules/list/<%= el.id %>/edit" class="btn btn-primary">Edit</a>
+                        <a href="/schedules/list/<%= el.id %>/delete" class="btn btn-danger">Delete</a>
+                      </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+    
+    <%- include('_bootstrap') %>
+</body>
+</html>

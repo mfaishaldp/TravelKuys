@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <%- include('_nav') %>
+
+    <div class="container">
+      <% if (name) { %>
+        <h1>Welcome, <%= name %> !</h1>
+        <a href="/schedules/<%= userId %>/convert" class="btn btn-primary" style="margin-bottom: 10px;">Download Transaction</a>
+      <% } %>
+      <!-- <h1>Schedule Travel</h1> -->
+      <div>
+        <div class="row">
+          <div class="col">
+            <% if (!userId) { %>
+              <form method="get" action="/schedules">
+            <% } else { %>
+              <form method="get" action="/schedules/<%= userId %>">
+            <% } %>
+            <!-- <form method="get" action="/schedules"> -->
+              <div class="mb-3" style="display: flex;">
+                <input name = "nameTravel" type="text" class="form-control" placeholder="Find Travel Name" style="margin-right: 10px;">
+                <button href="" class="btn btn-success">Search</button>
+              </div>
+            </form>
+          </div>
+          <div class="col"></div>
+        </div>
+        
+      </div>
+
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <% dataTravelCategory.forEach(el => { %>
+                <div class="col">
+                  <div class="card">
+                    <img src="<%= el.imgUrl %>" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title"><%= el.nameTravel %></h5>
+                      <h6 class="card-title">Schedule : <%= el.formatDate(el.schedule).resShow %></h6>
+                      <h6 class="card-title">Category : <%= el.Category.nameCategory %></h6>
+                      <h6 class="card-title">Price : <%= el.Category.newPrice %></h6>
+                      <p class="card-text"><%= el.Category.description %></p>
+                      <p class="card-title">Capacity : <%= el.capacity %></p>
+                      <div>
+                        <% if (userId) { %>
+                          <a href="/schedules/<%= userId %>/book/<%= el.id %>" class="btn btn-primary">Book</a>
+                        <% } else { %>
+                          <a href="" class="btn btn-primary">Book</a>
+                        <% } %>
+                      </div>
+                    </div>
+                    
+                    <div class="card-footer">
+                        <small class="text-body-secondary">Last updated : <%= el.formatDate(el.updatedAt).resShow %></small>
+                    </div>
+                    
+                  </div>
+                  
+                </div>
+            <% }) %>
+        </div>
+    </div>
+    
+    <%- include('_bootstrap') %>
+</body>
+</html>

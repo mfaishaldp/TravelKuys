@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelKuy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+        
+        /* Landing Page Styles */
+        .landing-page { width: 100%; }
+        
+        /* Header & Navigation */
+        .landing-header { background-color: #1976D2; color: white; padding: 2rem 0; min-height: 100vh; }
+        .landing-nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4rem; }
+        .landing-logo { display: flex; align-items: center; gap: 0.5rem; font-size: 1.5rem; font-weight: 600; }
+        .landing-nav-links { display: flex; gap: 1.5rem; align-items: center; }
+        
+        /* Hero Section */
+        .landing-hero { text-align: center; max-width: 800px; margin: 0 auto; padding: 4rem 0; }
+        .landing-hero h1 { font-size: 3.5rem; margin-bottom: 1.5rem; }
+        .landing-hero p { font-size: 1.25rem; margin-bottom: 2.5rem; opacity: 0.9; }
+        .landing-hero-actions { display: flex; gap: 1rem; justify-content: center; }
+        
+        /* Buttons */
+        .btn { padding: 0.75rem 1.5rem; border-radius: 4px; text-decoration: none; font-weight: 500; transition: all 0.3s; }
+        .btn-lg { padding: 1rem 2rem; }
+        .btn-primary { background-color: white; color: #1976D2; }
+        .btn-outline-light { border: 2px solid white; color: white; }
+        .btn-secondary { color: white; }
+        .btn-danger { color: white; }
+        .btn-dark { color: white; }
+        
+        /* Sections */
+        .landing-section { padding: 5rem 0; }
+        .section-header { text-align: center; margin-bottom: 4rem; }
+        .section-header h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+        
+        /* Features */
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+        .feature-card { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); text-align: center; }
+        .feature-icon { margin-bottom: 1.5rem; }
+        .feature-icon i { font-size: 2.5rem; color: #1976D2; }
+        
+        /* Destinations */
+        .bg-light { background-color: #f8f9fa; }
+        .destinations-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        .destination-card { background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .destination-image { height: 200px; background-size: cover; background-position: center; }
+        .destination-content { padding: 1.5rem; }
+        .destination-category { display: inline-block; padding: 0.25rem 0.75rem; background: #1976D2; color: white; border-radius: 4px; font-size: 0.875rem; margin-top: 1rem; }
+        
+        /* Testimonials */
+        .testimonials-slider { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .testimonial-card { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .testimonial-content { margin-bottom: 1.5rem; }
+        .testimonial-author { display: flex; align-items: center; gap: 1rem; }
+        .testimonial-avatar { width: 48px; height: 48px; background: #1976D2; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; }
+        
+        /* Footer */
+        .landing-footer { background: #212529; color: white; padding: 4rem 0 2rem; }
+        .landing-footer-content { display: flex; justify-content: space-between; gap: 4rem; margin-bottom: 3rem; }
+        .landing-footer-info { max-width: 300px; }
+        .landing-footer-links { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4rem; }
+        .footer-links-column h4 { margin-bottom: 1.5rem; }
+        .footer-links-column a { display: block; color: #dee2e6; text-decoration: none; margin-bottom: 0.75rem; }
+        .landing-footer-bottom { text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); }
+        
+       
+    </style>
+</head>
+<%- include('_nav') %>
+
+<div class="landing-page">
+  <div class="landing-header">
+    <div class="container">
+      <nav class="landing-nav">
+        <div class="landing-logo">
+        <i class="material-icons">flight_takeoff</i>
+          <span>TravelKuy</span>
+        </div>
+        <div class="landing-nav-links">
+          <a href="#features" class="btn btn-secondary">Features</a>
+          <a href="#destinations" class="btn btn-danger">Destinations</a>
+          <a href="#testimonials" class="btn btn-dark">Testimonials</a>
+          <!-- <a href="/login" class="btn btn-primary">Get Started</a> -->
+        </div>
+      </nav>
+      
+      <div class="landing-hero">
+        <div class="landing-hero-content">
+          <h1>Discover the world with TravelKuy</h1>
+          <p>Your ultimate travel management platform to find and book amazing experiences all around the globe.</p>
+          <div class="landing-hero-actions">
+            <a href="#features" class="btn btn-outline-light btn-lg">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <section id="features" class="landing-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Why Choose TravelKuy</h2>
+        <p>We provide the best travel management experience</p>
+      </div>
+      
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="material-icons">explore</i>
+          </div>
+          <h3>Discover Places</h3>
+          <p>Explore amazing destinations all around the world with our curated travel packages.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="material-icons">payments</i>
+          </div>
+          <h3>Best Prices</h3>
+          <p>Get the most competitive prices for all your travel needs with our best price guarantee.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="material-icons">calendar_month</i>
+          </div>
+          <h3>Easy Scheduling</h3>
+          <p>Plan your trips with our easy-to-use scheduling system that helps you organize everything.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="material-icons">support_agent</i>
+          </div>
+          <h3>24/7 Support</h3>
+          <p>Our customer support team is always ready to assist you, anytime and anywhere.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section id="destinations" class="landing-section bg-light">
+    <div class="container">
+      <div class="section-header">
+        <h2>Popular Destinations</h2>
+        <p>Explore our most booked travel destinations</p>
+      </div>
+      
+      <div class="destinations-grid">
+          <div class="destination-card">
+            <img src="https://perkim.id/wp-content/uploads/2025/03/ilustrasi-bali_169.jpeg" alt="imgURL">
+            <div class="destination-content">
+              <h3>Kawah Putih</h3>
+            <p>Experience the beauty and cultural wonders</p>
+            <span class="destination-category">Crater Vacation</span>
+          </div>
+        </div>
+        
+        <div class="destination-card">
+          <img src="https://whalewatchorg.home.blog/wp-content/uploads/2021/04/switzerland-nature-e1497949072710.jpg?w=650" alt="imgURL">
+          <div class="destination-content">
+            <h3>Lembang</h3>
+            <p>Breathtaking mountain views and adventure activities</p>
+            <span class="destination-category">Mountain Adventure</span>
+          </div>
+        </div>
+        
+        <div class="destination-card">
+          <img src="https://t3.ftcdn.net/jpg/04/98/23/10/360_F_498231018_6w6Zt0h2PdU4Muy5Tvph2VeNG67yTuwl.jpg" alt="imgURL">
+          <div class="destination-content">
+            <h3>City Light</h3>
+            <p>Explore the vibrant metropolis filled with culture</p>
+            <span class="destination-category">City Tour</span>
+          </div>
+        </div>
+        
+        <!-- <div class="destination-card">
+          <img src="https://image-prod.iol.co.za/resize/650x366/A-staggering-349-500-millionaires-744-centimillionaires-and-60-billionaires-live-in-New-York-Photo-AFP?source=https://iol-prod.appspot.com/image/34136bf97b3ca8e3be97c49425f1a688360cf6b6/2000&operation=CROP&offset=0x105&resize=2000x1125" alt="imgURL">
+          <div class="destination-content">
+            <h3>Gasibu</h3>
+            <p>Immerse yourself in USA with the high skycrapers</p>
+            <span class="destination-category">City Tour</span>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </section>
+  
+  <section id="testimonials" class="landing-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>What Our Customers Say</h2>
+        <p>Hear from travelers who have used our service</p>
+      </div>
+      
+      <div class="testimonials-slider">
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <p>"TravelKuy made planning my vacation so easy. The scheduling feature is amazing, and I got the best prices for my trip to Bandung!"</p>
+          </div>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">AA</div>
+            <div class="testimonial-info">
+              <h4>Abdul Assegaf</h4>
+              <p>Beach Vacation Enthusiast</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <p>"I've been using TravelKuy for all my business trips. The transaction tracking helps me keep everything organized for expense reports."</p>
+          </div>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">ZH</div>
+            <div class="testimonial-info">
+              <h4>Zalvien Hafiz</h4>
+              <p>Business Traveler</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <footer class="landing-footer">
+    <div class="container">
+      <div class="landing-footer-content">
+        <div class="landing-footer-info">
+          <div class="landing-logo">
+            <i class="material-icons">flight_takeoff</i>
+            <span>TravelKuy</span>
+          </div>
+          <p>Your ultimate travel management system for discovering and booking amazing experiences.</p>
+        </div>
+        
+      </div>
+      
+      
+    </div>
+  </footer>
+</div>
+
+<%- include('_bootstrap') %>
