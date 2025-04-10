@@ -1,0 +1,34 @@
+[
+    {
+      "id": 0,
+      "nameTravel": "Jackal Holiday",
+      "imgUrl": "https://picsum.photos/200/300",
+      "schedule" : "2025-09-10T08:30:00",
+      "capacity" : 10,
+      "CategoryId": 1
+    },
+    {
+        "id": 1,
+        "nameTravel": "Baraya",
+        "imgUrl": "https://picsum.photos/200/300",
+        "schedule" : "2025-09-10T20:00:00",
+        "capacity" : 10,
+        "CategoryId": 1
+    },
+    {
+        "id": 2,
+        "nameTravel": "Daytrans",
+        "imgUrl": "https://picsum.photos/200/300",
+        "schedule" : "2025-09-11T09:30:00",
+        "capacity" : 10,
+        "CategoryId": 2
+    },
+    {
+        "id": 3,
+        "nameTravel": "Cititrans",
+        "imgUrl": "https://picsum.photos/200/300",
+        "schedule" : "2025-09-11T09:30:00",
+        "capacity" : 13,
+        "CategoryId": 3
+    }
+]

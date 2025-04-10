@@ -1,0 +1,20 @@
+[
+    {
+      "id": 0,
+      "nameCategory": "Economy Class",
+      "price": 3000000,
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, "
+    },
+    {
+        "id": 1,
+        "nameCategory": "Business Class",
+        "price": 8000000,
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, "
+    },
+    {
+        "id": 2,
+        "nameCategory": "Luxury Class",
+        "price": 10000000,
+        "description": "the state of great comfort and extravagant living."
+    }
+]

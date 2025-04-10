@@ -1,0 +1,44 @@
+[
+    {
+      "id": 0,
+      "email": "Kym@gmail.com",
+      "password": "12345",
+      "role": "user"
+    },
+    {
+      "id": 1,
+      "email": "Fanchette@gmail.com",
+      "password": "12345",
+      "role": "user"
+    },
+    {
+      "id": 2,
+      "email": "Ricard@gmail.com",
+      "password": "12345",
+      "role": "user"
+    },
+    {
+      "id": 3,
+      "email": "Kipp@gmail.com",
+      "password": "12345",
+      "role": "user"
+    },
+    {
+      "id": 4,
+      "email": "Lyndell@gmail.com",
+      "password": "12345",
+      "role": "user"
+    },
+    {
+        "id": 5,
+        "email": "doni@gmail.com",
+        "password": "12345",
+        "role": "user"
+    },
+    {
+        "id": 6,
+        "email": "admin@gmail.com",
+        "password": "54321",
+        "role": "admin"
+    }
+]
