@@ -93,6 +93,16 @@ module.exports = (sequelize, DataTypes) => {
     static async deleteCategory(idCategory) {
       try {
 
+        let dataTravel = await sequelize.models.Travel.findOne({
+          where : {
+            CategoryId : +idCategory
+          }
+        })
+        if(dataTravel) {
+          // throw {name: "validate", msg: `Can't delete data, travel schedule booked by user`}
+          throw `Can't delete data, category used by travel schedule`
+        }
+
         let data = await this.getCategoryById(idCategory)
 
         await Category.destroy({

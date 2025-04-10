@@ -152,6 +152,16 @@ module.exports = (sequelize, DataTypes) => {
           throw {name: "validate", msg: `Can't delete data, schedule still active.`}
         }
 
+        let dataTransaction = await sequelize.models.Transaction.findOne({
+          where : {
+            TravelId : +idTravel
+          }
+        })
+        if(dataTransaction) {
+          throw {name: "validate", msg: `Can't delete data, travel schedule booked by user`}
+        }
+        
+
         await Travel.destroy({
           where : {
             id : +idTravel

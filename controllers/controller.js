@@ -122,12 +122,13 @@ class Controller {
         try {
 
             let {deleted} = req.query
+            let {error} = req.query
 
             //! Session
             let {email,role,name,userId} = req.session
 
             let dataCategory = await Category.getCategory()
-            res.render('categoryListPage',{dataCategory,deleted,email,role,name,userId})
+            res.render('categoryListPage',{dataCategory,deleted,email,role,name,userId,error})
         } catch (error) {
             res.send(error)
         }
@@ -207,8 +208,8 @@ class Controller {
             await Category.deleteCategory(id)
             res.redirect(`/categories/list?deleted=${dataNameDeleted}`)
         } catch (error) {
-            
-            res.send(error)
+            res.redirect(`/categories/list?error=${error}`)
+            // res.send(error)
         }
     }
     

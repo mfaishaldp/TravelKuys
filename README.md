@@ -5,6 +5,7 @@
 1. Registration, log in and log out.
 2. CRUD **Schedule** travel.
 3. CRUD **Categories** travel.
+4. Purchase available tickets travel schedule.
 
 ## User Features
 1. Registration, log in, and log out.
