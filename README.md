@@ -23,3 +23,9 @@
 7. "sequelize": "^6.37.7"
 8. "nodemon": "^3.1.9", (dev)
 9. "sequelize-cli": "^6.6.2" (dev)
+
+## How to run :
+1. Clone this repository
+2. Install package: _npm i_
+3. Then run: _npx nodemon app_
+4. Open your browser and go to: _localhost:3000_
